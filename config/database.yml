@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: rails_user
-  password: secret
+  password: secretpassword
   socket: /tmp/mysql.sock
 
 development:
