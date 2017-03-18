@@ -22,4 +22,10 @@ class AdminUser < ApplicationRecord
                     :format => EMAIL_REGEX,
                     :confirmation => true
 
+  scope :sorted, lambda { order("first_name ASC") }
+  scope :sortedLastFirst, lambda { order("last_name ASC, first_name ASC")}
+  def name
+    "#{first_name} #{last_name}"
+  end
+  
 end
