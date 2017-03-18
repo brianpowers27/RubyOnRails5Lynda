@@ -15,7 +15,6 @@
   </tr>
   <tr>
     <th>Created</th>
-    <td><%= f.datetime_select(:created_at) %></td>
+    <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
   </tr>
-  
 </table>

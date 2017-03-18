@@ -5,20 +5,19 @@ class AdminUsersController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @AdminUsers = AdminUser.sorted
+    @admin_users = AdminUser.sorted
   end
 
   def new
-    @AdminUser = AdminUser.new
-
+    @admin_user = AdminUser.new
   end
 
   def create
-    @AdminUser = AdminUser.create(admin_user_params)
-    if @AdminUser.save
-      flash[:notice] = "AdminUser created successfully."
+    @admin_user = AdminUser.new(admin_user_params)
+    if @admin_user.save
+      flash[:notice] = 'Admin user created successfully.'
       redirect_to(admin_users_path)
-    else      
+    else
       render('new')
     end
   end
@@ -29,10 +28,10 @@ class AdminUsersController < ApplicationController
 
   def update
     @admin_user = AdminUser.find(params[:id])
-    if @amin_user.update_attributes(admin_user_params)
-      flash[:notice] = "AdminUser edited successfully."
+    if @admin_user.update_attributes(admin_user_params)
+      flash[:notice] = 'Admin user updated successfully.'
       redirect_to(admin_users_path)
-    else      
+    else
       render('edit')
     end
   end

@@ -2,8 +2,6 @@ class DemoController < ApplicationController
 
   layout 'application'
 
-  before_action :confirm_logged_in
-  
   def index
     render('index')
   end
